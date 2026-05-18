@@ -33,7 +33,7 @@ let availableBooks = [
     {id: 4, name: "Unlock It", category: "Business & Marketing", author: "Dan Lock", price: 6000, image:"images/unlock_it.png"},
     {id: 5, name: "Tunaninka Kamanninka", category: "Self Awareness", author: "Mal. Bashir USman Tofa", price: 15000, image: "images/tunaninka.png"},
     {id: 6, name: "Gina Manufa", category: "Productivity", author: "Aliyu M. Ahmad", price: 9000, image: "images/ginamanufa.png"},
-    {id: 7, name: "The Laws of Human Nature", category: "Phsychology", author: "Robert Green", price: 14000, image: "images/laws.webp"},
+    {id: 7, name: "The Laws of Human Nature", category: "Phsychology", author: "Robert Greene", price: 14000, image: "images/laws.webp"},
     {id: 8, name: "Deep Work", category: "Productivity", author: "Carl Newport", price: 9500, image: "https://covers.openlibrary.org/b/isbn/9781455586691-M.jpg"},
     {id: 9, name: "The 7 Habits of Highly Effective People", category: "Habit", author: "Stephen R. Covey", price: 8500, image: "https://covers.openlibrary.org/b/isbn/9781451639612-M.jpg"},
     {id: 10, name: "The Sealed Nectar (Ar-Raheeq Al-Makhtum)", category: "History & Biography", author: "Safiur Rahman Mubarakpuri", price: 12000, image: "images/sealed.webp"},
