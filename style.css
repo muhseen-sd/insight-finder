@@ -1,0 +1,172 @@
+/* style.css - Complete Stylesheet */
+
+:root {
+    --primary-bg: #F5F5F7; /* Soft Light Gray */
+    --card-bg: #FFFFFF;
+    --text-main: #1D1D1F; /* Dark gray, almost black */
+    --text-muted: #86868B;
+    --accent-color: #0071E3; /* Nice clean blue */
+    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --border-radius: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--text-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--text-main);
+}
+
+/* 1. Styling the Search Bar */
+#search-bar {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    border: 1px solid #D2D2D7;
+    border-radius: 30px; /* Fully rounded */
+    background-color: var(--card-bg);
+    margin-bottom: 40px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.2);
+}
+
+/* 2. Styling the Book Grid (Replacing the raw <ul>) */
+#books-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive Grid */
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* 3. Styling Individual Book Cards */
+.book-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden; /* Clips the cover placeholder */
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Cover Placeholder (matches design) */
+.card-cover-placeholder {
+    height: 180px;
+    background-color: #E2E2E7; /* Light neutral gray */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-muted);
+}
+
+
+/* Container box for the image */
+.card-cover {
+    height: 220px; /* Slightly taller for realistic book dimensions */
+    width: 100%;
+    overflow: hidden;
+    background-color: #E2E2E7; /* Falls back to gray while the image loads */
+}
+
+/* The actual image styling - THE MODERN STANDARD */
+.book-img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; Forces image to scale beautifully without stretching */
+    object-fit: contain; /* Changed from 'cover' to 'contain' so official book shapes don't get cropped! */
+    background-color: #F8F9FA; /* Light soft background behind the book profile */
+
+    object-position: center; /* Keeps the center of the book cover in view */
+    transition: transform 0.3s ease; /* Smooth zoom effect on hover */
+}
+
+/* Pro UI Touch: Softly zoom the book cover when hovering over the card */
+.book-card:hover .book-img {
+    transform: scale(1.05);
+}
+
+/* Details Section */
+.card-details {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Pushes price to bottom if content varies */
+}
+
+.book-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-main);
+}
+
+.book-author {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.category-badge {
+    background-color: #E8F0FE; /* Soft blue highlight */
+    color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start; /* Keeps badge small */
+    margin-bottom: 15px;
+}
+
+.book-price {
+    margin-top: auto; /* Pushes to bottom of card details */
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Footer Disclaimer Styling */
+.site-footer {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 60px; /* Pushes it far below your cards grid */
+    padding: 20px;
+    border-top: 1px solid #D2D2D7;
+    text-align: center;
+}
+
+.site-footer p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
